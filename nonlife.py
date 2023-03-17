@@ -2,7 +2,8 @@ from openpyxl import load_workbook
 import openpyxl
 import glob
 import pyexcel as p
-excel_file = glob.glob("C:\Kojo\Q2 2022\Life\*.xlsx", recursive=True)
+excel_file = glob.glob("C:\Kojo\kwaku\*.xlsx", recursive=True)
+
 #excel_file.append(glob.glob("C:\Kojo\NonLife\.xlsx"))
 print(excel_file)
 new = []
@@ -17,28 +18,30 @@ for i,file in enumerate(excel_file):
     wb.active = wb["SDR3"]
     gp.append(wb.active.cell(row =12, column=4).value)
     np.append(wb.active.cell(row =15, column=4).value)
-    ni.append(wb.active.cell(row =21, column=4).value)
-    gbp.append(wb.active.cell(row =24, column=4).value)
-    nbp.append(wb.active.cell(row =26, column=4).value)
-    me.append(wb.active.cell(row =30, column=4).value)
-    ce.append(wb.active.cell(row =27, column=4).value)
-    ur.append(wb.active.cell(row =35, column=4).value)
-    ini.append(wb.active.cell(row =44, column=4).value)
-    oi.append(wb.active.cell(row =49, column=4).value)
-    ci.append(wb.active.cell(row =33, column=4).value)
-    pat.append(wb.active.cell(row =53, column=4).value)
+    ni.append(wb.active.cell(row =18, column=4).value)
+    gbp.append(wb.active.cell(row =21, column=4).value)
+
+    #nbp.append(wb.active.cell(row =26, column=4).value)
+
+    me.append(wb.active.cell(row =25, column=4).value)
+    ce.append(wb.active.cell(row =24, column=4).value)
+    ur.append(wb.active.cell(row =30, column=4).value)
+    ini.append(wb.active.cell(row =40, column=4).value)
+    oi.append(wb.active.cell(row =45, column=4).value)
+    ci.append(wb.active.cell(row =28, column=4).value)
+    pat.append(wb.active.cell(row =49, column=4).value)
 
     wb.active = wb['SDR2']
     name.append(wb.active.cell(row =1, column=2).value)
-    cb.append(wb.active.cell(row =9, column=3).value)
-    ina.append(wb.active.cell(row=26, column=3).value)
-    rec.append(wb.active.cell(row=41, column=3).value)
-    ppe.append(wb.active.cell(row=51, column=3).value)
-    ta.append(wb.active.cell(row=65, column=3).value)
+    cb.append(wb.active.cell(row =11, column=3).value)
+    ina.append(wb.active.cell(row=28, column=3).value)
+    rec.append(wb.active.cell(row=40, column=3).value)
+    ppe.append(wb.active.cell(row=48, column=3).value)
+    ta.append(wb.active.cell(row=61, column=3).value)
 
     wb.active = wb['SDR2i']
-    tp.append(wb.active.cell(row=14, column=3).value)
-    pay.append(wb.active.cell(row=23, column=3).value)
+    tp.append(wb.active.cell(row=16, column=3).value)
+    pay.append(wb.active.cell(row=26, column=3).value)
 
 
 ws = openpyxl.Workbook()
@@ -93,7 +96,7 @@ ws.active.cell(row=1, column=18).value ="Technical Provision"
 ws.active.cell(row=1, column=19).value ="Payables"
 
 
-ws.save('C:\Kojo\Bancassuq1.xlsx')
+ws.save('C:\Kojo\lnlBancassuq1.xlsx')
 
 
 
